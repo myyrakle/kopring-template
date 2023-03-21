@@ -3,8 +3,6 @@ package com.myyrakle.modules.auth
 import com.myyrakle.modules.user.entity.UserEntity
 import com.myyrakle.type.CustomUserDetails
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.security.core.authority.SimpleGrantedAuthority
-import org.springframework.security.core.userdetails.User
 import org.springframework.security.core.userdetails.UserDetails
 import org.springframework.security.core.userdetails.UserDetailsService
 import org.springframework.security.crypto.password.PasswordEncoder
@@ -25,7 +23,6 @@ class AuthService: UserDetailsService {
     // user entity raw 데이터를 security 내장 타입인 UserDetails로 변환
     private fun createUserDetails(user: UserEntity): UserDetails  {
         var details = CustomUserDetails(user, this.passwordEncoder!!)
-        // details.addAuthority(SimpleGrantedAuthority("ROLE_USER"));
         return details
     }
 }

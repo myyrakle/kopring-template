@@ -4,7 +4,6 @@ import com.myyrakle.modules.user.entity.UserEntity
 import org.springframework.security.core.GrantedAuthority
 import org.springframework.security.core.userdetails.UserDetails
 import org.springframework.security.crypto.password.PasswordEncoder
-import java.util.*
 import java.util.Collections.emptyList
 
 

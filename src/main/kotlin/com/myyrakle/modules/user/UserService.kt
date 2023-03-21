@@ -1,8 +1,6 @@
 package com.myyrakle.modules.user
 
 import com.myyrakle.modules.user.entity.UserEntity
-import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.stereotype.Service
 
 @Service

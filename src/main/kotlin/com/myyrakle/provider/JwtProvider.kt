@@ -1,7 +1,5 @@
 package com.myyrakle.provider
 
-import com.myyrakle.dto.JwtSuccessResponseDto
-import com.myyrakle.modules.user.UserService
 import com.myyrakle.modules.user.entity.UserEntity
 import com.myyrakle.type.CustomUserDetails
 import io.jsonwebtoken.*
