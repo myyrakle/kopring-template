@@ -15,7 +15,7 @@ class JwtAuthenticationFilter(jwtProvider: JwtProvider) : GenericFilterBean() {
 
     override fun doFilter(request: ServletRequest, response: ServletResponse, chain: FilterChain) {
         val token = resolveToken(request as HttpServletRequest)
-
+        
         // 토큰 유효성 검사
         if (token != null && jwtProvider.validateToken(token)) {
             val authentication = jwtProvider.getAuthentication(token)
