@@ -1,18 +1,28 @@
 @host = localhost:8080
+@access_token = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoibXl5cmFrbGUiLCJuYW1lIjoic3NzYW5nOTdAbmF2ZXIuY29tIiwiYXV0aG9yaXRpZXMiOiIiLCJleHAiOjE2Nzk0MjM5OTl9.4JVOcdh5MT2VsiB-EeDkm9-nRuFOgQnWyEBxM6szvlE
 
 ###
 POST http://{{host}}/auth/login
 Content-Type: application/json
 
 {
-    "email": "asdf", 
-    "password": "asdf"
+    "email": "sssang97@naver.com", 
+    "password": "q1w2e3r4"
 }
 ###
 
 ###
 GET http://{{host}}/
 Content-Type: application/json
+
+{
+}
+### 
+
+###
+GET http://{{host}}/user/my-info
+Content-Type: application/json
+Authorization: Bearer {{access_token}}
 
 {
 }

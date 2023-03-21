@@ -13,3 +13,7 @@ Spring Boot 2.7.10 with Kotlin
 - Spring JPA
 - Spring WebFlux
 - Spring Devtool
+
+## Feature
+
+- JWT authorize

@@ -20,11 +20,9 @@ class AuthController {
 
     @PostMapping("login")
     fun login(@RequestBody requestDto: LoginRequestDto): LoginResponseDto {
-        // ...
         val authenticationToken = UsernamePasswordAuthenticationToken(requestDto.email, requestDto.password);
  
-        // 2. 실제 검증 (사용자 비밀번호 체크)이 이루어지는 부분
-        // authenticate 메서드가 실행될 때 CustomUserDetailsService 에서 만든 loadUserByUsername 메서드가 실행
+        // loadUserByUsername 및 password 체크 수행
         val authentication = authenticationManagerBuilder.getObject().authenticate(authenticationToken);
         val customUserDetails = authentication.principal as CustomUserDetails
 
