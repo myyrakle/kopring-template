@@ -18,17 +18,17 @@ import java.util.stream.Collectors
 import javax.xml.bind.DatatypeConverter
 
 @Component
-class JwtProvider {
+class JwtProvider
+    (@Value("\${jwt.secret}") secretKey: String?) {
     private var key: Key? = null
 
-    // 시크릿키 기반으로 provider 생성
-    constructor(@Value("\${jwt.secret}") secretKey: String?) {
+    init {
         val secretByteKey = DatatypeConverter.parseBase64Binary(secretKey)
         key = Keys.hmacShaKeyFor(secretByteKey)
     }
 
     // JWT 액세스토큰 생성
-    open fun generateToken(authentication: Authentication): JwtSuccessResponseDto? {
+    fun generateToken(authentication: Authentication): JwtSuccessResponseDto? {
         val authorities: String = authentication.authorities.stream()
             .map { obj: GrantedAuthority -> obj.authority }
             .collect(Collectors.joining(","))
